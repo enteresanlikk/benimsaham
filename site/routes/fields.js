@@ -1,0 +1,1 @@
+var express = require('express');var router = express.Router();var Fields = require('../models/fields');// Registerrouter.get('/fields', function(req, res){	Fields.find(function(err,fields){		res.json(fields);	});});module.exports = router;

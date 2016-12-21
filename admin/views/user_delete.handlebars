@@ -1,0 +1,202 @@
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>B</b>S</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>BenimSaham</b>Panel</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Menü</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+         <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">{[{traoublescount.sayi}]}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li  ng-repeat="gorusler in gorusler"><!-- start message -->
+                    <a href="/Gorusler">
+                      <div class="pull-left">
+                        <img src="img/profile.png" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                          {[{gorusler.isim}]}
+                      </h4>
+                      <p>{[{gorusler.sorun}]}</p>
+                    </a>
+                  </li>
+                  <h3 class="text-center text-danger">{[{trouble_sonuc}]}</h3>
+                  <!-- end message -->
+
+
+                </ul>
+              </li>
+              <li class="footer"><a href="/Gorusler">Görüşleri Listele</a></li>
+            </ul>
+          </li>
+      
+
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="img/profile.png" class="user-image" alt="User Image">
+              <span class="hidden-xs" ng-repeat="admin in admin">{[{admin.username}]}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="img/profile.png" class="img-circle" alt="User Image">
+
+                <p style="font-size:20px;color:#fff;" ng-repeat="admin in admin">
+                  {[{admin.username}]}
+                </p>
+              </li>
+
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="/Profilim" class="btn btn-default btn-flat">Profilim</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/Cikis" class="btn btn-default btn-flat">Çıkış Yap</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+        <div class="user-panel">
+        <div class="pull-left image">
+          <img src="img/profile.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p ng-repeat="admin in admin">{[{admin.username}]}</p>
+          <a href="/Profilim"><i class="fa fa-circle text-success"></i> Çevrimiçi</a>
+        </div>
+      </div>
+
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header text-center"></li>
+            <li><a href="/"><i class="fa fa-home"></i> <span>Anasayfa</span></a></li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i> <span>Kullanıcı İşlemleri</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/Kullanicilar"><i class="fa fa-users"></i> Kullanıcılar</a></li>
+                <li ><a href="/Kullanici_Ekle"><i class="fa fa-plus"></i>Kullanıcı Ekle</a></li>
+                <li ><a href="/Kullanici_Guncelle"><i class="fa fa-pencil-square-o"></i>Kullanıcı Güncelle</a></li>
+                <li ><a href="/Kullanici_Sil"><i class="fa fa-times"></i>Kullanıcı Sil</a></li>
+              </ul>
+            </li>
+
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-soccer-ball-o"></i> <span>Halısaha İşlemleri</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/Sahalar"><i class="fa fa-soccer-ball-o"></i> Halısahalar</a></li>
+                <li ><a href="/Halisaha_Ekle"><i class="fa fa-plus"></i>Halısaha Ekle</a></li>
+                <li ><a href="/Halisaha_Guncelle"><i class="fa fa-pencil-square-o"></i>Halısaha Güncelle</a></li>
+                <li ><a href="/Halisaha_Sil"><i class="fa fa-times"></i>Halısaha Sil</a></li>
+            </ul>
+        </li>
+          
+        <li><a href="/Kiralayanlar"><i class="fa fa-share-square-o"></i> <span>Kiralayanlar</span></a></li>
+        <li><a href="/Gorusler"><i class="fa fa-comments-o"></i> <span>Görüşler</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="overflow:hidden;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 style="border-bottom:1px solid #666;padding-bottom:5px;color:#666;">
+        <a href="/"><i class="fa fa-home"></i></a> / {{{breadcrump}}}
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="col-md-4" ng-repeat="users in users">
+
+			<!-- Profile Image -->
+			<div class="box box-primary">
+			<div class="box-body box-profile">
+				<img class="profile-user-img img-responsive img-circle" src="img/profile.png" alt="User profile picture">
+
+				<h3 class="profile-username text-center">{[{users.username}]}</h3>
+
+				<p class="text-muted text-center text-lowercase">{[{users.yetki}]}</p>
+
+				<ul class="list-group list-group-unbordered">
+				<li class="list-group-item">
+					<b>E-Mail</b> <a class="pull-right">{[{users.email}]}</a>
+				</li>
+				<li class="list-group-item">
+					<b>Telefon</b> <a class="pull-right">{[{users.phone}]}</a>
+				</li>
+				<li  class="list-group-item text-right">
+					<button class="btn btn-danger" ng-click="Kullanici_Sil(users._id);">
+						Kullanıcıyı Sil <i class="fa fa-times"></i>
+					</button>
+				</li>
+
+				</ul>
+			</div>
+
+
+			</div>
+
+		</div>
+		<h1 class="text-center text-danger">{[{users_sonuc}]}</h1>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  
+
+  <!-- /.content-wrapper -->
+
+
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
